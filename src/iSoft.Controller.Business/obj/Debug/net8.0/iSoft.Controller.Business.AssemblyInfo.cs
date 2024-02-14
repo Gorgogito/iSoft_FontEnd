@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("iSoft.Controller.Core")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("iSoft.Controller.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18b1d4fe96c92f0f891b6095e0c24fd871a17313")]
-[assembly: System.Reflection.AssemblyProductAttribute("iSoft.Controller.Core")]
-[assembly: System.Reflection.AssemblyTitleAttribute("iSoft.Controller.Core")]
+[assembly: System.Reflection.AssemblyProductAttribute("iSoft.Controller.Business")]
+[assembly: System.Reflection.AssemblyTitleAttribute("iSoft.Controller.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

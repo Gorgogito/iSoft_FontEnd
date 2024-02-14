@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hmoz+TnuhOFh4L7vRGrKNYpZtr92he7KxxfimCm8Xbq1Y9dsss1GOCZibfZ+o3EGiqFTEk6C62IZVTISMLvsDQ==",
+  "dgSpecHash": "lNbXwtJg8j0WEEtcCRXoTdaEYZwK0iMbb2JFJBoLyZDlPBs3wXTEBNGeb2biunONkZ2Bp6CafuHEfvhH2DvJpg==",
   "success": true,
-  "projectFilePath": "D:\\Mys Proyectos\\iSoft\\iSoft_FontEnd\\src\\iSoft.Controller.Application\\iSoft.Controller.Application.csproj",
+  "projectFilePath": "D:\\Mys Proyectos\\iSoft\\iSoft_FontEnd\\src\\iSoft.Controller.Business\\iSoft.Controller.Business.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {

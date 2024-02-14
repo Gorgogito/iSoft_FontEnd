@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("iSoft.Controller.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5876c71a847e773d2b411bed7de11b6e900210b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18b1d4fe96c92f0f891b6095e0c24fd871a17313")]
 [assembly: System.Reflection.AssemblyProductAttribute("iSoft.Controller.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("iSoft.Controller.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
