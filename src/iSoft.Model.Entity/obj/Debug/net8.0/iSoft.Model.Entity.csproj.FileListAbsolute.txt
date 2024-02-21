@@ -1,0 +1,12 @@
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\bin\Debug\net8.0\iSoft.Model.Entity.deps.json
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\bin\Debug\net8.0\iSoft.Model.Entity.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\bin\Debug\net8.0\iSoft.Model.Entity.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.AssemblyInfoInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.AssemblyInfo.cs
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.csproj.CoreCompileInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.sourcelink.json
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\refint\iSoft.Model.Entity.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\iSoft.Model.Entity.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\net8.0\ref\iSoft.Model.Entity.dll

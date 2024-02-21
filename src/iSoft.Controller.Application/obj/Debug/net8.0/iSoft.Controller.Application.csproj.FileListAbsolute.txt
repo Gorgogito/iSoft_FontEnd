@@ -1,0 +1,13 @@
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\bin\Debug\net8.0\iSoft.Controller.Application.deps.json
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\bin\Debug\net8.0\iSoft.Controller.Application.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\bin\Debug\net8.0\iSoft.Controller.Application.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.csproj.AssemblyReference.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.AssemblyInfoInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.AssemblyInfo.cs
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.csproj.CoreCompileInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.sourcelink.json
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\refint\iSoft.Controller.Application.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\iSoft.Controller.Application.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Controller.Application\obj\Debug\net8.0\ref\iSoft.Controller.Application.dll

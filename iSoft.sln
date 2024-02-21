@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iSoft.Controller.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iSoft.Controller.Core", "src\iSoft.Controller.Core\iSoft.Controller.Core.csproj", "{210F62E3-283E-42AF-8068-42FDF05C566F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross", "Cross", "{FA890E2A-5CF2-4E5D-AFE0-9830EA9EDD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iSoft.Cross.Common", "src\iSoft.Cross.Common\iSoft.Cross.Common.csproj", "{B82E22FA-ED57-48A3-849E-03304B3E849F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{210F62E3-283E-42AF-8068-42FDF05C566F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{210F62E3-283E-42AF-8068-42FDF05C566F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{210F62E3-283E-42AF-8068-42FDF05C566F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82E22FA-ED57-48A3-849E-03304B3E849F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82E22FA-ED57-48A3-849E-03304B3E849F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82E22FA-ED57-48A3-849E-03304B3E849F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82E22FA-ED57-48A3-849E-03304B3E849F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{D4C1751D-C748-473C-AB26-150247598730} = {6831FEDD-7B5D-4A93-9E12-CF1888C6893B}
 		{B6E63933-6A51-488F-811C-D6A0927002F6} = {C6FAC13A-A60B-42E9-A011-EA3D5AE995D6}
 		{210F62E3-283E-42AF-8068-42FDF05C566F} = {C6FAC13A-A60B-42E9-A011-EA3D5AE995D6}
+		{B82E22FA-ED57-48A3-849E-03304B3E849F} = {FA890E2A-5CF2-4E5D-AFE0-9830EA9EDD64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF227481-999F-49CE-BF41-80184B9AFE1C}

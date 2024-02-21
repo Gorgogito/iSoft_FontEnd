@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iSoft.Controller.Application\iSoft.Controller.Application.csproj" />
+    <ProjectReference Include="..\iSoft.Cross.Common\iSoft.Cross.Common.csproj" />
     <ProjectReference Include="..\iSoft.Model.Entity\iSoft.Model.Entity.csproj" />
   </ItemGroup>
 

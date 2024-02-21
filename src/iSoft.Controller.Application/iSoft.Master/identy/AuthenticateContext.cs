@@ -10,11 +10,11 @@ namespace iSoft.Controller.Application.iSoft.Master.identy
       string json;
       var method = $"/Authenticate/Authenticate";
       var request = (HttpWebRequest)WebRequest.Create(Context.GetProfile.Url + method);
-      request.Method = "GET";
+      request.Method = "POST";
       request.ContentType = "application/json";
       request.Accept = "application/json";
 
-      json = "{\r\n  \"userName\": \"" + userName + "\",\r\n  \"" + password + "\": \"123456789\"\r\n}";
+      json = "{\r\n  \"userName\": \"" + userName + "\",\r\n  \"password\": \"" + password + "\"\r\n}";
 
       try
       {
