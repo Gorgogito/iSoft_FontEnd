@@ -1,18 +1,17 @@
-using iSoft.Controller.Core.iSoft.Master.identy;
+ï»¿using iSoft.Controller.Core.iSoft.Master.identy;
 using iSoft.View.Desktop.Utilities;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using System.Windows.Forms;
 
 namespace iSoft.View.Desktop
 {
   public partial class FrmLogin : MaterialForm
   {
 
-
-    #region « VARIABLES INTERNAS »
+    #region Â« VARIABLES INTERNAS Â»
 
     AuthenticateRepository businessUser;
+    bool IsDeath;
 
     #endregion
 
@@ -24,24 +23,23 @@ namespace iSoft.View.Desktop
       materialSkinManager.AddFormToManage(this);
       materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
       materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
-      //materialSkinManager.ColorScheme = new ColorScheme(Primary.Purple700, Primary.Purple900, Primary.Purple500, Accent.LightBlue200, TextShade.WHITE);
 
       businessUser = new AuthenticateRepository();
 
+      BtnPasswordView.Tag = "0";
+      BtnPasswordView.Image = ImgList.Images[0];
+      TxtPassword.Password = true;
+      TxtPassword.Refresh();
+      IsDeath = true;
     }
 
+    #region Â« EVENTOS DE TEXTBOX Â»
 
+    #region Â« Usuario Â»
 
-    #region « EVENTOS DE TEXTBOX »
-
-    #region « Usuario »
-
-    private void TxtUsuario_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+    private void TxtUsuario_Enter(object sender, EventArgs e)
     {
-      if (e.KeyChar == DoCmd.Strings.Chr((int)Keys.Enter))
-      {
-        TxtPassword.Select();
-      }
+      TxtUsuario.SelectAll();
     }
 
     private void TxtPassword_Enter(object sender, System.EventArgs e)
@@ -60,10 +58,7 @@ namespace iSoft.View.Desktop
 
     #endregion
 
-
-
-
-    #region « EVENTOS DE BOTONES »
+    #region Â« EVENTOS DE BOTONES Â»
 
     private void BtnSesion_Click(object sender, System.EventArgs e)
     {
@@ -74,48 +69,82 @@ namespace iSoft.View.Desktop
         "Ingrese usuario", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information); return;
       }
 
-      //var data = (from ent in businessUser.Login(TxtUsuario.Text, TxtPassword.Text)
-      //            select ent).ToList();
-      var data =businessUser.Login(TxtUsuario.Text, TxtPassword.Text);
+      var response = businessUser.Login(TxtUsuario.Text, TxtPassword.Text);
 
-      //if (data.Count > 0)
-      //{
+      if (response.IsSuccess)
+      {
+        if (response.Data != null)
+        {
+          Definition.User.KeyId = response.Data.KeyId;
+          Definition.User.UserName = response.Data.UserName;
+          Definition.User.Password = response.Data.Password;
+          Definition.User.Description = response.Data.Description;
+          Definition.User.Names = response.Data.Names;
+          Definition.User.Surnames = response.Data.Surnames;
+          Definition.User.Phone = response.Data.Phone;
+          Definition.User.EMail = response.Data.EMail;
+          Definition.User.Token = response.Data.Token;
+          Definition.User.RoleId = response.Data.RoleId;
+          Definition.User.StateId = response.Data.StateId;
+          Definition.User.IsSystem = response.Data.IsSystem;
+          IsDeath = false;
+          this.Close();
+        }
+        else
+        {
+          MessageBox.Show(
+            "Usuario no existe.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          TxtUsuario.Select();
+        }
+      }
+      else
+      {
+        MessageBox.Show(
+          response.Message, "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        TxtUsuario.Select();
+      }
 
-      //  Definition.User.KeyId = data[0].KeyId;
-      //  Definition.User.UserName = data[0].UserName;
-      //  Definition.User.Password = data[0].Password;
-      //  Definition.User.Description = data[0].Description;
-      //  Definition.User.Names = data[0].Names;
-      //  Definition.User.Surnames = data[0].Surnames;
-      //  Definition.User.Phone = data[0].Phone;
-      //  Definition.User.EMail = data[0].EMail;
-      //  Definition.User.Image = data[0].Image;
-      //  Definition.User.Token = data[0].Token;
-      //  Definition.User.RoleId = data[0].RoleId;
-      //  Definition.User.StateId = data[0].StateId;
-      //  Definition.User.IsSystem = data[0].IsSystem;
-
-      //  this.Close();
-
-      //}
-      //else
-      //{
-      //  MessageBox.Show(
-      //    "Usuario no existe.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-      //  TxtUsuario.Select();
-      //}
     }
 
     private void BtCancelar_Click(object sender, System.EventArgs e)
     {
+      IsDeath = true;
       this.Close();
-      Application.Exit();
     }
 
     #endregion
 
     #endregion
 
+    private void BtnPasswordView_Click(object sender, EventArgs e)
+    {
+      if (BtnPasswordView.Tag == "0")
+      {
+        BtnPasswordView.Tag = "1";
+        BtnPasswordView.Image = ImgList.Images[1];
+        TxtPassword.Password = false;
+        TxtPassword.Refresh();
+        //TxtPassword.UseSystemPasswordChar = false;
+        //TxtPassword.PasswordChar =char.Parse("");
+      }
+      else if (BtnPasswordView.Tag == "1")
+      {
+        BtnPasswordView.Tag = "0";
+        BtnPasswordView.Image = ImgList.Images[0];
+        TxtPassword.Password = true;
+        TxtPassword.Refresh();
+        //TxtPassword.UseSystemPasswordChar = true;
+        //TxtPassword.PasswordChar = DoCmd.Strings.Chr(9679);
+      }
 
+    }
+
+    private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if (IsDeath == true)
+      {
+        Application.Exit();
+      }
+    }
   }
 }
