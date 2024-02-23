@@ -1,0 +1,6 @@
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\bin\Debug\iSoft.Model.Entity.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\bin\Debug\iSoft.Model.Entity.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\iSoft.Model.Entity.csproj.AssemblyReference.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\iSoft.Model.Entity.csproj.CoreCompileInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\iSoft.Model.Entity.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Model.Entity\obj\Debug\iSoft.Model.Entity.pdb

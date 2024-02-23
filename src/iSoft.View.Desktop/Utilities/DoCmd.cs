@@ -2,6 +2,9 @@
 using System.Data;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace iSoft.View.Desktop.Utilities
 {

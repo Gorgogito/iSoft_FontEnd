@@ -1,18 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace iSoft.Model.Entity.iSoft.Master.master
+﻿namespace iSoft.Model.Entity.iSoft.Master.master
 {
   public class Status : CommonIdentity
   {
 
-    [Required]
-    [Column(Order = 2)]
-    public string? Name { get; set; }
-
-    [Required]
-    [Column(Order = 3)]
-    public string? Description { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
 
   }
 }

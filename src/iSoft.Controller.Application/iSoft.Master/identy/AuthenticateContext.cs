@@ -8,35 +8,12 @@ namespace iSoft.Controller.Application.iSoft.Master.identy
     public string Login(string userName, string password)
     {
       string json;
-      var method = $"/Authenticate/Authenticate";
-      var request = (HttpWebRequest)WebRequest.Create(Context.GetProfile.Url + method);
-      request.Method = "POST";
-      request.ContentType = "application/json";
-      request.Accept = "application/json";
-
+      var method = $"/Authenticate/Authenticate";      
       json = "{\r\n  \"userName\": \"" + userName + "\",\r\n  \"password\": \"" + password + "\"\r\n}";
 
       try
       {
-        using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-        {
-          streamWriter.Write(json);
-          streamWriter.Flush();
-          streamWriter.Close();
-        }
-        using (WebResponse response = request.GetResponse())
-        {
-          using (Stream strReader = response.GetResponseStream())
-          {
-            if (strReader == null) return string.Empty;
-            using (StreamReader objReader = new StreamReader(strReader))
-            {
-              string responseBody = objReader.ReadToEnd();
-              // Do something with responseBody
-              return responseBody;
-            }
-          }
-        }
+        return Context.Send(methodHttp.POST, Context.GetProfile.Url + method, json, "");
       }
       catch (WebException ex)
       {

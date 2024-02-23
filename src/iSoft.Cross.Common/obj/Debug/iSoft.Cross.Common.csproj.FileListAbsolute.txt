@@ -1,0 +1,13 @@
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\iSoft.Cross.Common.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\iSoft.Cross.Common.pdb
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\FluentValidation.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\FluentValidation.xml
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\obj\Debug\iSoft.Cross.Common.csproj.AssemblyReference.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\obj\Debug\iSoft.Cross.Common.csproj.CoreCompileInputs.cache
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\obj\Debug\iSoft.Cross.Common.csproj.CopyComplete
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\obj\Debug\iSoft.Cross.Common.dll
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.Cross.Common\obj\Debug\iSoft.Cross.Common.pdb
