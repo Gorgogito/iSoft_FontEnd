@@ -21,8 +21,6 @@ namespace iSoft.Controller.Core.iSoft.Master.identy
 
       Response<User> models = JsonConvert.DeserializeObject<Response<User>>(json);
 
-      //List<User> models = JsonConvert.DeserializeObject<List<User>>(json);
-
       return models;
     }
 

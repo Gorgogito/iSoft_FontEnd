@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using iSoft.Controller.Core.iSoft.Master.identy;
 
 namespace iSoft.View.Desktop.Utilities
 {
@@ -603,6 +604,28 @@ namespace iSoft.View.Desktop.Utilities
         return int.TryParse(Expression.ToString(), out int result);
       }
 
+    }
+
+    public class Authenticate
+    {
+
+      static AuthenticateRepository businessUser;
+
+      public static string GetToken(string userName, string userPassword)
+      {
+        string result = "";
+        businessUser = new AuthenticateRepository();
+        var responseUsr = businessUser.Login(userName, userPassword);
+
+        if (responseUsr.IsSuccess)
+        {
+          if (responseUsr.Data != null)
+          {
+            result = responseUsr.Data.Token;
+          }
+        }
+        return result;
+      }
     }
 
   }

@@ -1,9 +1,8 @@
-﻿using iSoft.Controller.Application.iSoft.Master.identy;
-using iSoft.Controller.Application.iSoft.Master.master;
+﻿using iSoft.Controller.Application.iSoft.Master.master;
 using iSoft.Cross.Common;
-using iSoft.Model.Entity.iSoft.Master.identy;
 using iSoft.Model.Entity.iSoft.Master.master;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace iSoft.Controller.Core.iSoft.Master.master
 {
@@ -17,13 +16,20 @@ namespace iSoft.Controller.Core.iSoft.Master.master
       _context = new CompanyContext();
     }
 
-    public Response<Company> GetAll(string authorization)
+    public Response<List<Company>> List(string authorization)
     {
-      var json = _context.GetAll(authorization);
+      var json = _context.List(authorization);
+
+      Response<List<Company>> models = JsonConvert.DeserializeObject<Response<List<Company>>>(json);
+
+      return models;
+    }
+
+    public Response<Company> GetById(string authorization, string keyId)
+    {
+      var json = _context.GetById(authorization, keyId);
 
       Response<Company> models = JsonConvert.DeserializeObject<Response<Company>>(json);
-
-      //List<User> models = JsonConvert.DeserializeObject<List<User>>(json);
 
       return models;
     }

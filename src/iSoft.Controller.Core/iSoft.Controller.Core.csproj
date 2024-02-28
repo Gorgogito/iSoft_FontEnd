@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="iSoft.Master\identy\AuthenticateRepository.cs" />
     <Compile Include="iSoft.Master\master\CompanyRepository.cs" />
+    <Compile Include="iSoft.Master\process\EncryptingRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

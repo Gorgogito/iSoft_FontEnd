@@ -2,6 +2,8 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
+using RestSharp;
 
 namespace iSoft.Controller.Application
 {
@@ -49,7 +51,7 @@ namespace iSoft.Controller.Application
     {
       //var method = $"/Authenticate/Authenticate";
       var api = (HttpWebRequest)WebRequest.Create(uri);
-
+      WebResponse response;
       api.Method = CreateHttpMethod(method);
       api.ContentType = "application/json";
       api.Accept = "application/json";
@@ -70,26 +72,59 @@ namespace iSoft.Controller.Application
         if (authorization.Length > 0)
         { api.Headers.Add("Authorization", "Bearer " + authorization); }
 
-        using (WebResponse response = api.GetResponse())
+      }
+      catch (WebException ex)
+      {
+        return string.Empty;
+      }
+      try
+      {
+        //response = api.GetResponse();
+
+        Stream strReader = api.GetResponse().GetResponseStream();
+        if (strReader == null) return string.Empty;
+        using (StreamReader objReader = new StreamReader(strReader))
         {
-          using (Stream strReader = response.GetResponseStream())
-          {
-            if (strReader == null) return string.Empty;
-            using (StreamReader objReader = new StreamReader(strReader))
-            {
-              string responseBody = objReader.ReadToEnd();
-              // Do something with responseBody
-              return responseBody;
-            }
-          }
+          string responseBody = objReader.ReadToEnd();
+          // Do something with responseBody
+          return responseBody;
         }
+
       }
       catch (WebException ex)
       {
         // Handle error
+
+
         return string.Empty;
       }
 
+    }
+
+
+
+
+    public static string SendNew(RestSharp.Method method, string host, string func, string request, string authorization)
+    {
+      try
+      {
+        var client = new RestClient(host);
+        var req = new RestRequest(func, method);
+        if (request == null) { request = ""; }
+        if (request.Length > 0) { req.AddJsonBody(request, false); }
+        if (authorization == null) { authorization = ""; }
+        if (authorization.Length > 0)
+        { req.AddHeader("Authorization", "Bearer " + authorization); }
+
+        var response = client.Execute(req);
+
+        return response.Content;
+
+      }
+      catch (WebException ex)
+      {
+        return string.Empty;
+      }
     }
 
   }

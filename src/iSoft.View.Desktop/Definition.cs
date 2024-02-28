@@ -8,6 +8,15 @@
       public static string KeyId { set; get; }
       public static string Ruc { set; get; }
       public static string Description { set; get; }
+      public string Observation { get; set; }
+      public string Address { get; set; }
+      public string Agent { get; set; }
+      public string Phone { get; set; }
+      public string EMail { get; set; }
+      public string Web { get; set; }
+      public static string StateId { get; set; }
+      public static bool IsSystem { get; set; }
+
     }
 
     public struct User

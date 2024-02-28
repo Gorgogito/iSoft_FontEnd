@@ -32,16 +32,16 @@
       this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
       this.BtnCancelar = new DevComponents.DotNetBar.ButtonX();
       this.BtnAceptar = new DevComponents.DotNetBar.ButtonX();
+      this.TxtUsuario = new DevComponents.DotNetBar.Controls.TextBoxX();
+      this.TxtPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.labelX4 = new DevComponents.DotNetBar.LabelX();
       this.GrpEmpresa = new DevComponents.DotNetBar.Controls.GroupPanel();
       this.CboEmpresa = new DevComponents.DotNetBar.Controls.ComboTree();
       this.labelX3 = new DevComponents.DotNetBar.LabelX();
       this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
       this.labelX2 = new DevComponents.DotNetBar.LabelX();
-      this.TxtUsuario = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
       this.labelX1 = new DevComponents.DotNetBar.LabelX();
-      this.TxtPassword = new DevComponents.DotNetBar.Controls.TextBoxX();
       this.line2 = new DevComponents.DotNetBar.Controls.Line();
       this.BtnLogin = new DevComponents.DotNetBar.ButtonX();
       this.GrpEmpresa.SuspendLayout();
@@ -88,6 +88,68 @@
       this.BtnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
       this.BtnAceptar.TabIndex = 36;
       this.BtnAceptar.Text = "&Ingresar";
+      this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+      // 
+      // TxtUsuario
+      // 
+      this.TxtUsuario.AutoSelectAll = true;
+      this.TxtUsuario.BackColor = System.Drawing.Color.Black;
+      // 
+      // 
+      // 
+      this.TxtUsuario.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+      this.TxtUsuario.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+      this.TxtUsuario.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+      this.TxtUsuario.Border.BorderBottomWidth = 1;
+      this.TxtUsuario.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+      this.TxtUsuario.Border.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+      this.TxtUsuario.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+      this.TxtUsuario.Border.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+      this.TxtUsuario.Border.Class = "RibbonClientPanel";
+      this.TxtUsuario.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.TxtUsuario.DisabledBackColor = System.Drawing.Color.White;
+      this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.TxtUsuario.ForeColor = System.Drawing.Color.White;
+      this.highlighter1.SetHighlightOnFocus(this.TxtUsuario, true);
+      this.TxtUsuario.Location = new System.Drawing.Point(112, 2);
+      this.TxtUsuario.MaxLength = 0;
+      this.TxtUsuario.Name = "TxtUsuario";
+      this.TxtUsuario.Size = new System.Drawing.Size(465, 24);
+      this.TxtUsuario.TabIndex = 0;
+      this.TxtUsuario.WatermarkColor = System.Drawing.Color.DimGray;
+      this.TxtUsuario.WatermarkText = "Ingrese usuario";
+      this.TxtUsuario.Enter += new System.EventHandler(this.TxtUsuario_Enter);
+      this.TxtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
+      // 
+      // TxtPassword
+      // 
+      this.TxtPassword.AutoSelectAll = true;
+      this.TxtPassword.BackColor = System.Drawing.Color.Black;
+      // 
+      // 
+      // 
+      this.TxtPassword.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+      this.TxtPassword.Border.BorderBottomWidth = 1;
+      this.TxtPassword.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+      this.TxtPassword.Border.Class = "RibbonClientPanel";
+      this.TxtPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+      this.TxtPassword.ButtonCustom.Symbol = "";
+      this.TxtPassword.ButtonCustom.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+      this.TxtPassword.ButtonCustom.Visible = true;
+      this.TxtPassword.DisabledBackColor = System.Drawing.Color.White;
+      this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.TxtPassword.ForeColor = System.Drawing.Color.White;
+      this.highlighter1.SetHighlightOnFocus(this.TxtPassword, true);
+      this.TxtPassword.Location = new System.Drawing.Point(112, 2);
+      this.TxtPassword.Name = "TxtPassword";
+      this.TxtPassword.Size = new System.Drawing.Size(465, 24);
+      this.TxtPassword.TabIndex = 23;
+      this.TxtPassword.UseSystemPasswordChar = true;
+      this.TxtPassword.WatermarkColor = System.Drawing.Color.DimGray;
+      this.TxtPassword.WatermarkText = "Ingresa tu contraseña";
+      this.TxtPassword.ButtonCustomClick += new System.EventHandler(this.TxtPassword_ButtonCustomClick);
+      this.TxtPassword.Enter += new System.EventHandler(this.TxtUsuario_Enter);
+      this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPassword_KeyPress);
       // 
       // labelX4
       // 
@@ -250,37 +312,6 @@
       this.labelX2.TabIndex = 24;
       this.labelX2.Text = "Usuario:";
       // 
-      // TxtUsuario
-      // 
-      this.TxtUsuario.AutoSelectAll = true;
-      this.TxtUsuario.BackColor = System.Drawing.Color.Black;
-      // 
-      // 
-      // 
-      this.TxtUsuario.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-      this.TxtUsuario.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-      this.TxtUsuario.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-      this.TxtUsuario.Border.BorderBottomWidth = 1;
-      this.TxtUsuario.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-      this.TxtUsuario.Border.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-      this.TxtUsuario.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-      this.TxtUsuario.Border.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-      this.TxtUsuario.Border.Class = "RibbonClientPanel";
-      this.TxtUsuario.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-      this.TxtUsuario.DisabledBackColor = System.Drawing.Color.White;
-      this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtUsuario.ForeColor = System.Drawing.Color.White;
-      this.highlighter1.SetHighlightOnFocus(this.TxtUsuario, true);
-      this.TxtUsuario.Location = new System.Drawing.Point(112, 2);
-      this.TxtUsuario.MaxLength = 0;
-      this.TxtUsuario.Name = "TxtUsuario";
-      this.TxtUsuario.Size = new System.Drawing.Size(465, 24);
-      this.TxtUsuario.TabIndex = 0;
-      this.TxtUsuario.WatermarkColor = System.Drawing.Color.DimGray;
-      this.TxtUsuario.WatermarkText = "Ingrese usuario";
-      this.TxtUsuario.Enter += new System.EventHandler(this.TxtUsuario_Enter);
-      this.TxtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsuario_KeyPress);
-      // 
       // groupPanel1
       // 
       this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -337,36 +368,6 @@
       this.labelX1.Size = new System.Drawing.Size(91, 24);
       this.labelX1.TabIndex = 24;
       this.labelX1.Text = "Contraseña:";
-      // 
-      // TxtPassword
-      // 
-      this.TxtPassword.AutoSelectAll = true;
-      this.TxtPassword.BackColor = System.Drawing.Color.Black;
-      // 
-      // 
-      // 
-      this.TxtPassword.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-      this.TxtPassword.Border.BorderBottomWidth = 1;
-      this.TxtPassword.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-      this.TxtPassword.Border.Class = "RibbonClientPanel";
-      this.TxtPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-      this.TxtPassword.ButtonCustom.Symbol = "";
-      this.TxtPassword.ButtonCustom.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-      this.TxtPassword.ButtonCustom.Visible = true;
-      this.TxtPassword.DisabledBackColor = System.Drawing.Color.White;
-      this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TxtPassword.ForeColor = System.Drawing.Color.White;
-      this.highlighter1.SetHighlightOnFocus(this.TxtPassword, true);
-      this.TxtPassword.Location = new System.Drawing.Point(112, 2);
-      this.TxtPassword.Name = "TxtPassword";
-      this.TxtPassword.Size = new System.Drawing.Size(465, 24);
-      this.TxtPassword.TabIndex = 23;
-      this.TxtPassword.UseSystemPasswordChar = true;
-      this.TxtPassword.WatermarkColor = System.Drawing.Color.DimGray;
-      this.TxtPassword.WatermarkText = "Ingresa tu contraseña";
-      this.TxtPassword.ButtonCustomClick += new System.EventHandler(this.TxtPassword_ButtonCustomClick);
-      this.TxtPassword.Enter += new System.EventHandler(this.TxtUsuario_Enter);
-      this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPassword_KeyPress);
       // 
       // line2
       // 

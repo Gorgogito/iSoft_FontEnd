@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System;
 using System.Drawing;
 using iSoft.Controller.Core.iSoft.Master.master;
+using System.Linq;
+using iSoft.Controller.Core.iSoft.Master.process;
 
 namespace iSoft.View.Desktop.Windows
 {
@@ -13,6 +15,7 @@ namespace iSoft.View.Desktop.Windows
 
     AuthenticateRepository businessUser;
     CompanyRepository businessEmp;
+    EncryptingRepository decryptingRepository;
     bool IsDeath;
 
     #endregion
@@ -23,6 +26,7 @@ namespace iSoft.View.Desktop.Windows
 
       businessUser = new AuthenticateRepository();
       businessEmp = new CompanyRepository();
+      decryptingRepository = new EncryptingRepository();
     }
 
     #region « Usuario »
@@ -43,6 +47,20 @@ namespace iSoft.View.Desktop.Windows
     private void TxtPassword_Enter(object sender, System.EventArgs e)
     {
       TxtPassword.SelectAll();
+    }
+
+    private void TxtPassword_ButtonCustomClick(object sender, EventArgs e)
+    {
+      if (TxtPassword.ButtonCustom.Symbol == "")
+      {
+        TxtPassword.ButtonCustom.Symbol = "";
+        TxtPassword.UseSystemPasswordChar = false;
+      }
+      else if (TxtPassword.ButtonCustom.Symbol == "")
+      {
+        TxtPassword.ButtonCustom.Symbol = "";
+        TxtPassword.UseSystemPasswordChar = true;
+      }
     }
 
     private void TxtPassword_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -85,17 +103,21 @@ namespace iSoft.View.Desktop.Windows
           Definition.User.RoleId = responseUsr.Data.RoleId;
           Definition.User.StateId = responseUsr.Data.StateId;
           Definition.User.IsSystem = responseUsr.Data.IsSystem;
-          //IsDeath = false;
-          //this.Close();
+
           GrpEmpresa.Enabled = true;
 
-          var responseEmp = businessEmp.GetAll(Definition.User.Token);
+          var pass = decryptingRepository.Decrypt(Definition.User.Password).Data;
+          var responseEmp = businessEmp.List(DoCmd.Authenticate.GetToken(Definition.User.UserName, pass));
 
           if (responseEmp.IsSuccess)
           {
             if (responseEmp.Data != null)
             {
-              Definition.Company.KeyId = responseEmp.Data.KeyId;
+
+              var emps = (from ent in responseEmp.Data select new { ent.KeyId, ent.Description }).ToList();
+              CboEmpresa.DataSource = emps;
+              CboEmpresa.DisplayMembers = "Description";
+              CboEmpresa.ValueMember = "KeyId";
             }
           }
           CboEmpresa.Select();
@@ -114,6 +136,25 @@ namespace iSoft.View.Desktop.Windows
         TxtUsuario.Select();
       }
 
+    }
+
+    private void BtnAceptar_Click(object sender, EventArgs e)
+    {
+      var pass = decryptingRepository.Decrypt(Definition.User.Password).Data;
+      var responseEmp = businessEmp.GetById(DoCmd.Authenticate.GetToken(Definition.User.UserName, pass), CboEmpresa.SelectedValue.ToString());
+
+      if (responseEmp.IsSuccess)
+      {
+        if (responseEmp.Data != null)
+        {
+          Definition.Company.KeyId = responseEmp.Data.KeyId;
+
+        }
+      }
+
+
+      IsDeath = false;
+      this.Close();
     }
 
     private void BtnCancelar_Click(object sender, System.EventArgs e)
@@ -136,33 +177,15 @@ namespace iSoft.View.Desktop.Windows
 
     private void FrmLogin_Shown(object sender, EventArgs e)
     {
-      //var emps = (from ent in businessCompany.SelectAll() select new { ent.KeyId, ent.Description }).ToList();
-      //CboEmpresa.DataSource = emps;
-      //CboEmpresa.DisplayMembers = "Description";
-      //CboEmpresa.ValueMember = "KeyId";
-
       this.BackColor = Color.FromArgb(45, 45, 48);
       TxtUsuario.BackColor = Color.FromArgb(45, 45, 48);
       TxtPassword.BackColor = Color.FromArgb(45, 45, 48);
       CboEmpresa.BackColor = Color.FromArgb(45, 45, 48);
       CboEmpresa.ForeColor = Color.White;
-      CboEmpresa.Focus();
+      TxtUsuario.Focus();
     }
 
     #endregion
 
-    private void TxtPassword_ButtonCustomClick(object sender, EventArgs e)
-    {
-      if (TxtPassword.ButtonCustom.Symbol == "")
-      {
-        TxtPassword.ButtonCustom.Symbol = "";
-        TxtPassword.UseSystemPasswordChar = false;
-      }
-      else if (TxtPassword.ButtonCustom.Symbol == "")
-      {
-        TxtPassword.ButtonCustom.Symbol = "";
-        TxtPassword.UseSystemPasswordChar = true;
-      }
-    }
   }
 }
