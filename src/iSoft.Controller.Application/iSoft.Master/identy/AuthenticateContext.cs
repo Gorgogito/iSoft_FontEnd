@@ -13,7 +13,7 @@ namespace iSoft.Controller.Application.iSoft.Master.identy
 
       try
       {
-        return Context.SendNew(RestSharp.Method.Post , Context.GetProfile.Url,  method, json, "");
+        return Context.Send(RestSharp.Method.Post , Context.GetProfile.Url,  method, json, "");
       }
       catch (WebException ex)
       {

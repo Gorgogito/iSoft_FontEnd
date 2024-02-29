@@ -47,3 +47,4 @@ D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.View.Desktop\bin\Debug\System.Val
 D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.View.Desktop\bin\Debug\System.Text.Encodings.Web.xml
 D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.View.Desktop\bin\Debug\System.Numerics.Vectors.xml
 D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.View.Desktop\bin\Debug\System.Buffers.xml
+D:\Mys Proyectos\iSoft\iSoft_FontEnd\src\iSoft.View.Desktop\obj\Debug\iSoft.View.Desktop.Windows.FrmBlock.resources

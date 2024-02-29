@@ -47,64 +47,64 @@ namespace iSoft.Controller.Application
       }
     }
 
-    public static string Send(methodHttp method, string uri, string request, string authorization)
-    {
-      //var method = $"/Authenticate/Authenticate";
-      var api = (HttpWebRequest)WebRequest.Create(uri);
-      WebResponse response;
-      api.Method = CreateHttpMethod(method);
-      api.ContentType = "application/json";
-      api.Accept = "application/json";
+    //public static string Send(methodHttp method, string uri, string request, string authorization)
+    //{
+    //  //var method = $"/Authenticate/Authenticate";
+    //  var api = (HttpWebRequest)WebRequest.Create(uri);
+    //  WebResponse response;
+    //  api.Method = CreateHttpMethod(method);
+    //  api.ContentType = "application/json";
+    //  api.Accept = "application/json";
 
-      try
-      {
-        if (request == null) { request = ""; }
-        if (request.Length > 0)
-        {
-          using (var streamWriter = new StreamWriter(api.GetRequestStream()))
-          {
-            streamWriter.Write(request);
-            streamWriter.Flush();
-            streamWriter.Close();
-          }
-        }
-        if (authorization == null) { authorization = ""; }
-        if (authorization.Length > 0)
-        { api.Headers.Add("Authorization", "Bearer " + authorization); }
+    //  try
+    //  {
+    //    if (request == null) { request = ""; }
+    //    if (request.Length > 0)
+    //    {
+    //      using (var streamWriter = new StreamWriter(api.GetRequestStream()))
+    //      {
+    //        streamWriter.Write(request);
+    //        streamWriter.Flush();
+    //        streamWriter.Close();
+    //      }
+    //    }
+    //    if (authorization == null) { authorization = ""; }
+    //    if (authorization.Length > 0)
+    //    { api.Headers.Add("Authorization", "Bearer " + authorization); }
 
-      }
-      catch (WebException ex)
-      {
-        return string.Empty;
-      }
-      try
-      {
-        //response = api.GetResponse();
+    //  }
+    //  catch (WebException ex)
+    //  {
+    //    return string.Empty;
+    //  }
+    //  try
+    //  {
+    //    //response = api.GetResponse();
 
-        Stream strReader = api.GetResponse().GetResponseStream();
-        if (strReader == null) return string.Empty;
-        using (StreamReader objReader = new StreamReader(strReader))
-        {
-          string responseBody = objReader.ReadToEnd();
-          // Do something with responseBody
-          return responseBody;
-        }
+    //    Stream strReader = api.GetResponse().GetResponseStream();
+    //    if (strReader == null) return string.Empty;
+    //    using (StreamReader objReader = new StreamReader(strReader))
+    //    {
+    //      string responseBody = objReader.ReadToEnd();
+    //      // Do something with responseBody
+    //      return responseBody;
+    //    }
 
-      }
-      catch (WebException ex)
-      {
-        // Handle error
-
-
-        return string.Empty;
-      }
-
-    }
+    //  }
+    //  catch (WebException ex)
+    //  {
+    //    // Handle error
 
 
+    //    return string.Empty;
+    //  }
+
+    //}
 
 
-    public static string SendNew(RestSharp.Method method, string host, string func, string request, string authorization)
+
+
+    public static string Send(RestSharp.Method method, string host, string func, string request, string authorization)
     {
       try
       {

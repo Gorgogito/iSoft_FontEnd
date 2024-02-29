@@ -12,7 +12,7 @@ namespace iSoft.Controller.Application.iSoft.Master.process
       json = " \"" + stringValue + "\"";
       try
       {
-        return Context.Send(methodHttp.PATCH, Context.GetProfile.Url + method, json, "");
+        return Context.Send(RestSharp.Method.Patch, Context.GetProfile.Url, method, json, "");
       }
       catch (WebException ex)
       {
@@ -23,14 +23,14 @@ namespace iSoft.Controller.Application.iSoft.Master.process
     }
 
     public string Decrypt(string stringValue)
-    {      
+    {
       string json;
       var method = $"/Encrypting/DecryptString";
       json = " \"" + stringValue + "\"";
       string result;
       try
       {
-        return Context.Send(methodHttp.PATCH, Context.GetProfile.Url + method, json, "");
+        return Context.Send(RestSharp.Method.Patch, Context.GetProfile.Url, method, json, "");
       }
       catch (WebException ex)
       {

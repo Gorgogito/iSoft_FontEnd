@@ -2,15 +2,15 @@
 using iSoft.View.Desktop.Utilities;
 using System.Windows.Forms;
 using System;
-using System.Drawing;
 using iSoft.Controller.Core.iSoft.Master.master;
 using System.Linq;
 using iSoft.Controller.Core.iSoft.Master.process;
 
 namespace iSoft.View.Desktop.Windows
 {
-  public partial class FrmLogin : DevComponents.DotNetBar.Metro.MetroForm
+  public partial class FrmLogin : DevComponents.DotNetBar.Office2007Form
   {
+
     #region « VARIABLES INTERNAS »
 
     AuthenticateRepository businessUser;
@@ -19,6 +19,8 @@ namespace iSoft.View.Desktop.Windows
     bool IsDeath;
 
     #endregion
+
+    #region « CONSTRUCTORES Y DESTRUCTORES »
 
     public FrmLogin()
     {
@@ -29,7 +31,9 @@ namespace iSoft.View.Desktop.Windows
       decryptingRepository = new EncryptingRepository();
     }
 
-    #region « Usuario »
+    #endregion
+
+    #region « USUARIO »
 
     private void TxtUsuario_Enter(object sender, EventArgs e)
     {
@@ -51,15 +55,17 @@ namespace iSoft.View.Desktop.Windows
 
     private void TxtPassword_ButtonCustomClick(object sender, EventArgs e)
     {
-      if (TxtPassword.ButtonCustom.Symbol == "")
+      if (TxtPassword.Tag.ToString() == "ON")
       {
-        TxtPassword.ButtonCustom.Symbol = "";
+        TxtPassword.ButtonCustom.Image = imageList1.Images[00];
         TxtPassword.UseSystemPasswordChar = false;
+        TxtPassword.Tag = "OFF";
       }
-      else if (TxtPassword.ButtonCustom.Symbol == "")
+      else if (TxtPassword.Tag.ToString() == "OFF")
       {
-        TxtPassword.ButtonCustom.Symbol = "";
+        TxtPassword.ButtonCustom.Image = imageList1.Images[01];
         TxtPassword.UseSystemPasswordChar = true;
+        TxtPassword.Tag = "ON";
       }
     }
 
@@ -104,7 +110,7 @@ namespace iSoft.View.Desktop.Windows
           Definition.User.StateId = responseUsr.Data.StateId;
           Definition.User.IsSystem = responseUsr.Data.IsSystem;
 
-          GrpEmpresa.Enabled = true;
+          CboEmpresa.Enabled = true;
 
           var pass = decryptingRepository.Decrypt(Definition.User.Password).Data;
           var responseEmp = businessEmp.List(DoCmd.Authenticate.GetToken(Definition.User.UserName, pass));
@@ -151,8 +157,6 @@ namespace iSoft.View.Desktop.Windows
 
         }
       }
-
-
       IsDeath = false;
       this.Close();
     }
@@ -177,11 +181,16 @@ namespace iSoft.View.Desktop.Windows
 
     private void FrmLogin_Shown(object sender, EventArgs e)
     {
-      this.BackColor = Color.FromArgb(45, 45, 48);
-      TxtUsuario.BackColor = Color.FromArgb(45, 45, 48);
-      TxtPassword.BackColor = Color.FromArgb(45, 45, 48);
-      CboEmpresa.BackColor = Color.FromArgb(45, 45, 48);
-      CboEmpresa.ForeColor = Color.White;
+      //this.BackColor = Color.FromArgb(45, 45, 48);
+      //TxtUsuario.BackColor = Color.FromArgb(45, 45, 48);
+      //TxtPassword.BackColor = Color.FromArgb(45, 45, 48);
+      //CboEmpresa.BackColor = Color.FromArgb(45, 45, 48);
+      //CboEmpresa.ForeColor = Color.White;
+
+      TxtPassword.ButtonCustom.Image = imageList1.Images[01];
+      TxtPassword.UseSystemPasswordChar = true;
+      TxtPassword.Tag = "ON";
+
       TxtUsuario.Focus();
     }
 

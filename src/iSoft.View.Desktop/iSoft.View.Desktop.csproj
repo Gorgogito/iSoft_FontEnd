@@ -51,6 +51,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DoCmd.cs" />
+    <Compile Include="Windows\FrmBlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FrmBlock.designer.cs">
+      <DependentUpon>FrmBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\FrmBlock.resx">
+      <DependentUpon>FrmBlock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

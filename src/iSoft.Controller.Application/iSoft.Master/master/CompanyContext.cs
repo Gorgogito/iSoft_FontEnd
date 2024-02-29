@@ -12,7 +12,7 @@ namespace iSoft.Controller.Application.iSoft.Master.master
       try
       {
         //return Context.Send(methodHttp.GET, Context.GetProfile.Url + method, "", authorization);
-        return Context.SendNew(RestSharp.Method.Get, Context.GetProfile.Url, method, "", authorization);
+        return Context.Send(RestSharp.Method.Get, Context.GetProfile.Url, method, "", authorization);
       }
       catch (WebException ex)
       {
@@ -31,7 +31,7 @@ namespace iSoft.Controller.Application.iSoft.Master.master
 
       try
       {
-        return Context.SendNew(RestSharp.Method.Patch, Context.GetProfile.Url, method, json, authorization);
+        return Context.Send(RestSharp.Method.Patch, Context.GetProfile.Url, method, json, authorization);
         //return Context.Send(methodHttp.PATCH, Context.GetProfile.Url + method, json, authorization);
       }
       catch (WebException ex)
